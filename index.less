@@ -1,0 +1,51 @@
+
+//整体背景
+@grad-bg:#ccc;
+
+//线条颜色
+@line-color:red;
+//线条粗细
+@borderWidth:1px;
+//每个网格大小
+@gradSize:36px;
+
+//整体padding
+@gradPadding:10px;
+
+//标题高度
+@headerHeight:60px;
+
+
+#root{
+   #board-layout{
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     padding: @gradPadding;
+     width: 2*(@gradPadding+@borderWidth)+@gradSize*15;
+     height: 2*(@gradPadding+@borderWidth)+@gradSize*15+@headerHeight+10;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     margin-top: -(@gradPadding+@borderWidth+(@gradSize*15+@headerHeight)/2);
+     margin-left: -(@gradPadding+@borderWidth+@gradSize*15/2);
+     font-size: 40px;
+     background: @grad-bg;
+
+     .board-control{
+       height: @headerHeight;
+        box-sizing: border-box;
+        padding: 5px;
+       border: 1px solid yellow;
+       margin-bottom: 10px;
+     }
+     .board-grid{
+       height: @gradSize*15+@borderWidth*2;
+       width: 100%;
+       box-sizing: border-box;
+       background: linear-gradient(to bottom,transparent (@gradSize - @borderWidth) ,@line-color @borderWidth), linear-gradient(to left,transparent (@gradSize - @borderWidth) ,@line-color @borderWidth);
+       background-size: @gradSize @gradSize;
+       border-top: 1px solid @line-color;
+       border-right:1px solid @line-color;
+     }
+   }
+}

@@ -1,0 +1,30 @@
+#root #board-layout {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 562px;
+  height: 632px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -311px;
+  margin-left: -281px;
+  font-size: 40px;
+  background: #ccc;
+}
+#root #board-layout .board-control {
+  height: 60px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid yellow;
+  margin-bottom: 10px;
+}
+#root #board-layout .board-grid {
+  height: 542px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, transparent 35px, red 1px), linear-gradient(to left, transparent 35px, red 1px);
+  background-size: 36px 36px;
+  border-top: 1px solid red;
+  border-right: 1px solid red;
+}
