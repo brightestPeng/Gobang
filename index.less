@@ -10,10 +10,16 @@
 @gradSize:36px;
 
 //整体padding
-@gradPadding:10px;
+@gradPadding:40px;
 
 //标题高度
 @headerHeight:60px;
+
+//头部距棋盘距离
+@headerBottom:40px;
+
+//棋子大小
+@boardSize:40px;
 
 
 #root{
@@ -22,7 +28,7 @@
      box-sizing: border-box;
      padding: @gradPadding;
      width: 2*(@gradPadding+@borderWidth)+@gradSize*15;
-     height: 2*(@gradPadding+@borderWidth)+@gradSize*15+@headerHeight+10;
+     height: 2*(@gradPadding+@borderWidth)+@gradSize*15+@headerHeight+@headerBottom;
      position: absolute;
      left: 50%;
      top: 50%;
@@ -30,13 +36,14 @@
      margin-left: -(@gradPadding+@borderWidth+@gradSize*15/2);
      font-size: 40px;
      background: @grad-bg;
+     font-size:14px;
 
      .board-control{
        height: @headerHeight;
         box-sizing: border-box;
         padding: 5px;
        border: 1px solid yellow;
-       margin-bottom: 10px;
+       margin-bottom: @headerBottom;
      }
      .board-grid{
        height: @gradSize*15+@borderWidth*2;
@@ -46,6 +53,21 @@
        background-size: @gradSize @gradSize;
        border-top: 1px solid @line-color;
        border-right:1px solid @line-color;
+
+       .board{
+          box-sizing: border-box;
+          position: absolute;
+          margin-top: @headerHeight+@headerBottom+@gradPadding/2;
+          margin-left: @gradPadding;
+          width: @boardSize;
+          height: @boardSize;
+          left: -@boardSize/2;
+          top: -@boardSize/2;
+          border-radius:@boardSize;
+
+          background: transparent;
+          border:1px solid red;
+       }
      }
    }
 }

@@ -9,14 +9,24 @@
     <div id="root">
         <div id="board-layout">
             <div class="board-control"></div>
-            <div class="board-grid" ></div>
+            <div class="board-grid" >
+                <div class="board"></div>
+            </div>
         </div>
     </div>
     <script src="./board/board.js"></script>
     <script src="./index.js"></script>
     <script>
         console.log(this.Board);
-        console.log(this);
+        console.log(this.Gobang);
+
+        let boardGrid = document.getElementsByClassName("board-grid")[0];
+
+        console.log(boardGrid);
+
+        let game = new Gobang(boardGrid);
+
+        game.start();
     </script>
 </body>
 </html>
