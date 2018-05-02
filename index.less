@@ -7,7 +7,7 @@
 //线条粗细
 @borderWidth:1px;
 //每个网格大小
-@gradSize:36px;
+@gradSize:40px;
 
 //整体padding
 @gradPadding:40px;
@@ -21,19 +21,23 @@
 //棋子大小
 @boardSize:40px;
 
+//棋盘格子数  15*15
+@gridNum: 14;
+
+
 
 #root{
    #board-layout{
      border: 1px solid #ccc;
      box-sizing: border-box;
      padding: @gradPadding;
-     width: 2*(@gradPadding+@borderWidth)+@gradSize*15;
-     height: 2*(@gradPadding+@borderWidth)+@gradSize*15+@headerHeight+@headerBottom;
+     width: 2*(@gradPadding+@borderWidth)+@gradSize*@gridNum;
+     height: 2*(@gradPadding+@borderWidth)+@gradSize*@gridNum+@headerHeight+@headerBottom;
      position: absolute;
      left: 50%;
      top: 50%;
-     margin-top: -(@gradPadding+@borderWidth+(@gradSize*15+@headerHeight)/2);
-     margin-left: -(@gradPadding+@borderWidth+@gradSize*15/2);
+     margin-top: -(@gradPadding+@borderWidth+(@gradSize*@gridNum+@headerHeight)/2);
+     margin-left: -(@gradPadding+@borderWidth+@gradSize*@gridNum/2);
      font-size: 40px;
      background: @grad-bg;
      font-size:14px;
@@ -46,7 +50,7 @@
        margin-bottom: @headerBottom;
      }
      .board-grid{
-       height: @gradSize*15+@borderWidth*2;
+       height: @gradSize*@gridNum+@borderWidth*2;
        width: 100%;
        box-sizing: border-box;
        background: linear-gradient(to bottom,transparent (@gradSize - @borderWidth) ,@line-color @borderWidth), linear-gradient(to left,transparent (@gradSize - @borderWidth) ,@line-color @borderWidth);
@@ -57,16 +61,13 @@
        .board{
           box-sizing: border-box;
           position: absolute;
-          margin-top: @headerHeight+@headerBottom+@gradPadding/2;
+          margin-top: @headerHeight+@headerBottom+@gradPadding;
           margin-left: @gradPadding;
           width: @boardSize;
           height: @boardSize;
           left: -@boardSize/2;
           top: -@boardSize/2;
           border-radius:@boardSize;
-
-          background: transparent;
-          border:1px solid red;
        }
      }
    }
